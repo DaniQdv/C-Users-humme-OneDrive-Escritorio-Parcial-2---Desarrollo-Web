@@ -2,21 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("form-agregar");
     const lista = document.getElementById("lista-compras");
   
-    // Cargar la lista al iniciar
+    
     cargarLista();
   
-    // Agregar ítem
+  
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const nuevoItem = document.getElementById("item").value.trim();
       if (nuevoItem) {
         agregarItem(nuevoItem, false);
         guardarLista();
-        form.reset(); // Limpiar el campo de entrada
+        form.reset(); 
       }
     });
   
-    // Función para agregar ítem
+    
     function agregarItem(texto, completado) {
       const li = document.createElement("li");
       li.className = "list-group-item d-flex justify-content-between align-items-center";
@@ -29,13 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
   
-      // Toggle de completado al hacer clic en el texto
+      
       li.querySelector("span").addEventListener("click", () => {
         li.querySelector("span").classList.toggle("completado");
-        guardarLista(); // Guardar el estado de completado
+        guardarLista(); 
       });
   
-      // Editar ítem
+     
       li.querySelector(".btn-editar").addEventListener("click", () => {
         const nuevoTexto = prompt("Editar ítem:", texto);
         if (nuevoTexto !== null && nuevoTexto.trim() !== "") {
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
   
-      // Eliminar ítem
+      
       li.querySelector(".btn-eliminar").addEventListener("click", () => {
         lista.removeChild(li);
         guardarLista();
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lista.appendChild(li);
     }
   
-    // Función para guardar la lista en localStorage
+    
     function guardarLista() {
       const items = Array.from(lista.querySelectorAll("li")).map((li) => {
         return {
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("listaCompras", JSON.stringify(items));
     }
   
-    // Función para cargar la lista desde localStorage
+    
     function cargarLista() {
       lista.innerHTML = "";
       const items = JSON.parse(localStorage.getItem("listaCompras")) || [];
