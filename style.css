@@ -1,0 +1,75 @@
+body {
+  background-color: #f8f9fa;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+}
+
+form input {
+  max-width: 400px;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.list-group-item button {
+  background-color: transparent;
+  border: none;
+  color: #dc3545;
+}
+
+footer {
+  background-color: #343a40;
+  color: white;
+}
+
+#info-footer {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+}
+.completado {
+  text-decoration: line-through;
+  background-color: #d4edda; /* Verde claro */
+  color: #155724; /* Verde oscuro */
+  transition: all 0.3s ease; /* Efecto suave */
+}
+
+button {
+  margin-left: 10px;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.1); /* Efecto de agrandado al pasar el ratón */
+}
+#footer {
+  background-color: #343a40;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 25vh; /* 1/4 de la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#footer-content {
+  text-align: center;
+}
+
+#foto-perfil {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid #fff;
+}
